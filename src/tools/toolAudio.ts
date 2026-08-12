@@ -87,4 +87,16 @@ export interface Drone {
 export function startDrone(freqs: number[], level = 0.16): Drone {
     const ac = audio();
     const t = ac.currentTime;
-    const out
+
+    const out = ac.createGain();
+    out.gain.setValueAtTime(0, t);
+    out.gain.linearRampToValueAtTime(level, t + 0.6);
+
+    const tone = ac.createBiquadFilter();
+    tone.type = 'lowpass';
+    tone.frequency.value = 1600;
+    tone.Q.value = 0.7;
+    tone.connect(out).connect(ac.destination);
+
+    const parts: OscillatorNode[] = [];
+    freqs.forEach((hz, i) => {
