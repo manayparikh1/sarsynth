@@ -100,3 +100,40 @@ export function startDrone(freqs: number[], level = 0.16): Drone {
 
     const parts: OscillatorNode[] = [];
     freqs.forEach((hz, i) => {
+
+        for (const detune of [-4, 4]) {
+            const osc = ac.createOscillator();
+            osc.type = i === 0 ? 'triangle' : 'sine';
+            osc.frequency.value = hz;
+            osc.detune.value = detune;
+            const g = ac.createGain();
+            g.gain.value = (i === 0 ? 0.5 : 0.32) / freqs.length;
+            osc.connect(g).connect(tone);
+            osc.start(t);
+            parts.push(osc);
+        }
+    });
+
+    const shimmer = ac.createOscillator();
+    shimmer.frequency.value = 0.18;
+    const shimmerDepth = ac.createGain();
+    shimmerDepth.gain.value = 220;
+    shimmer.connect(shimmerDepth).connect(tone.frequency);
+    shimmer.start(t);
+    parts.push(shimmer);
+
+    let stopped = false;
+    return {
+        setLevel(v) {
+            if (!stopped) out.gain.setTargetAtTime(v, ac.currentTime, 0.05);
+        },
+        stop() {
+            if (stopped) return;
+            stopped = true;
+            const now = ac.currentTime;
+            out.gain.cancelScheduledValues(now);
+            out.gain.setTargetAtTime(0, now, 0.12);
+            parts.forEach((p) => p.stop(now + 0.7));
+        },
+    };
+}
