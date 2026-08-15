@@ -146,6 +146,35 @@ export function DroneBox({ onBack }: { onBack: () => void }) {
                             {swaraAt(semi).roman}
                             {semi < 0 ? ' ·' : ''}
                         </span>
-                        <span className="dim">
-                            { }
-                        </span>
+                        <span className="dim">{transposeName(tonic.name, semi)}</span>
+                        <span className="dim">{pitchOf(saHz, semi, 'just').toFixed(1)} Hz</span>
+                    </button>
+                ))}
+            </div>
+            <div className="tool-controls">
+                <Slider
+                    label="Level"
+                    min={0.02}
+                    max={0.4}
+                    step={0.01}
+                    value={level}
+                    display={`${Math.round((level / 0.4) * 100)}%`}
+                    onChange={setLevel}
+                />
+                <Slider
+                    label="Pluck pace"
+                    min={0.4}
+                    max={2.4}
+                    step={0.05}
+                    value={pace}
+                    display={`${pace.toFixed(2)}s per string`}
+                    onChange={setPace}
+                />
+            </div>
+
+            <p className="tool-note">
+                A tanpura is not actually a chord but rather it's two note that cycle over and over until the ear stops hearing them as notes and starts hearing them as the floor the raga stands on. Slow and pluck pace right down and strings blur into each other, which is pretty wild because thats the sound you actually want.
+            </p>
+        </ToolShell>
+    );
+}
