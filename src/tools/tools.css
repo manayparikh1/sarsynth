@@ -1,0 +1,216 @@
+.overlay.tools-overlay {
+    zoom: 1.2;
+    display: block;
+    overflow-y: auto;
+    overscroll-behavior: contain;
+    padding: 26px 22px 60px;
+    background: rgba(10, 8, 6, 0.94);
+}
+
+.toolkit-link {
+    font-size: 11px;
+    padding: 10px 16px;
+    opacity: 0.85;
+}
+
+.tool {
+    width: 100%;
+    max-width: 900px;
+    margin: 0 auto;
+    text-align: left;
+}
+
+/* these are the headings and the text --- */
+.tool-deva,
+.tool-card-deva,
+.cell-deva,
+.keycell-deva,
+.chord-deva,
+.string-deva,
+.answer-deva,
+.tuner-deva {
+    font-family: 'Kohinoor Devanagari', 'Noto Sans Devanagari', 'Devanagari Sangam MN', 'Nirmala UI', sans-serif;
+    color: #eaa94e;
+    line-height: 1;
+}
+
+.tool-back {
+    margin-bottom: 18px;
+}
+
+.tool-title {
+    display: flex;
+    align-items: baseline;
+    gap: 14px;
+}
+
+.tool-title h1 {
+    margin: 0;
+    font-size: 19px;
+}
+
+.tool-deva {
+    font-size: 34px;
+}
+
+.tool-blurb,
+.tool-note {
+    max-width: 70ch;
+    line-height: 1.7;
+    opacity: 0.6;
+}
+
+.tool-blurb {
+    margin: 10px 0 22px;
+    font-size: 12.5px;
+}
+
+.tool-note {
+    margin: 14px 0 0;
+    font-size: 11.5px;
+}
+
+.dim,
+.result-fit,
+.result-note,
+.matra-bol,
+.tool-card-blurb {
+    opacity: 0.55;
+}
+
+/* controls */
+.tool-row {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: flex-end;
+    gap: 10px;
+    margin-bottom: 14px
+}
+
+.tool-field {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+}
+
+.tool-field>span {
+    font-size: 9.5px;
+    text-transform: uppercase;
+    letter-spacing: 0.05rem;
+    opacity: 0.6;
+}
+
+.tool-field select {
+    background: rgba(232, 169, 78, 0.08);
+    border: 1px solid rgba(232, 169, 78, 0.3);
+    border-radius: 6px;
+    color: #e8a94e;
+    font: inherit;
+    font-size: 11.5px;
+    padding: 7px 8px;
+}
+
+.tool-segmented {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 6px;
+}
+
+.tool-btn {
+    padding: 8px 14px;
+    font-size: 11.5px;
+    border-radius: 8px;
+}
+
+.tool-readout {
+    font-size: 11.5px;
+    opacity: 0.6;
+    padding-bottom: 6px;
+}
+
+.tool-readout b {
+    font-size: 14px;
+    opacity: 1;
+}
+
+.tool-hud {
+    display: flex;
+    gap: 26px;
+    margin: 14px 0 0;
+}
+
+.tool-controls {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 4px 26px;
+    margin-top: 18px;
+}
+
+.tool-card,
+.result,
+.thaat,
+.tuner-face,
+.keycell,
+.chord-note,
+.string,
+.answer,
+.matra {
+    border: 1px solid rgba(232, 169, 78, 0.18);
+    background: rgba(232, 169, 78, 0.04);
+    border-radius: 10px;
+    color: inherit;
+    font: inherit;
+    text-align: left;
+    transition: all 0.12s ease;
+}
+
+.tool-card:hover,
+.keycell:hover,
+.chord-note:hover,
+.string:hover,
+.answer:hover {
+    border-color: rgba(232, 169, 78, 0.55);
+    background: rgba(232, 169, 78, 0.12);
+}
+
+.keycell,
+.chord-note,
+.string,
+.answer,
+.matra {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 3px;
+    padding: 10px 6px;
+    font-size: 10px;
+    cursor: pointer
+}
+
+.keycell.on,
+.matra.now,
+.string.now,
+.swara-chip.hit {
+    background: rgba(232, 169, 78, 0.3);
+    border-color: rgba(255, 209, 138, 0.85);
+    color: #f7e8c9;
+    opacity: 1.1;
+}
+
+.keycell-deva,
+.answer-deva,
+.chord-deva {
+    font-size: 18.8px;
+}
+
+.komal {
+    color: #e89339;
+}
+
+.tivra,
+.tool-table tr.tivra td {
+    color: #57c9ad;
+}
+
+/* THE HUB*/
