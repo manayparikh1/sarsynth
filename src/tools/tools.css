@@ -195,7 +195,7 @@
     background: rgba(232, 169, 78, 0.3);
     border-color: rgba(255, 209, 138, 0.85);
     color: #f7e8c9;
-    opacity: 1.1;
+    opacity: 1;
 }
 
 .keycell-deva,
@@ -214,3 +214,392 @@
 }
 
 /* THE HUB*/
+
+.tool-grid,
+.thaat-grid,
+.answer-grid {
+    display: grid;
+    gap: 10px;
+}
+
+.tool-grid {
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+}
+
+.thaat-grid {
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+}
+
+.answer-grid {
+    grid-template-columns: repeat(auto-fit, minmax(96px, 1fr));
+}
+
+.tool-card {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    padding: 16px;
+    cursor: pointer;
+}
+
+.tool-card-deva {
+    font-size: 24px;
+    width: 78px;
+    flex: none;
+}
+
+.tool-card-body {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    flex: 1;
+    min-width: 0;
+}
+
+.tool-card-name {
+    font-size: 12.5px;
+}
+
+.tool-card-blurb {
+    font-size: 11px;
+    line-height: 1.5;
+}
+
+.tool-card-go {
+    flex: none;
+    opacity: 0.5;
+}
+
+/* scale finder tool*/
+.keyrow {
+    display: grid;
+    grid-template-columns: repeat(12, 1fr);
+    gap: 5px;
+    margin-bottom: 14px;
+}
+
+.keycell-roman {
+    font-size: 10px;
+}
+
+.keycell-west {
+    font-size: 9px;
+    opacity: 0.5;
+}
+
+.result.list {
+    display: flex;
+    flex-direction: column;
+    gap: 7.8px;
+    margin-top: 11.9px;
+}
+
+.result,
+.thaat {
+    padding: 11px 14px;
+}
+
+.result-top,
+.thaat-top {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.result-name,
+.chord-name {
+    font-size: 12.5px;
+}
+
+.tag,
+.swara-chip {
+
+    font-size: 9.5px;
+    padding: 2.5px 7.5px;
+    border-radius: 99.99px;
+    border: 1px solid rgba(232, 169, 78, 0.3);
+    opacity: 0.6;
+}
+
+.tag {
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+    font-size: 9px;
+}
+
+.result-fit,
+.result-note,
+.matra-bol {
+    font-size: 10.5px;
+}
+
+.result-play {
+    margin-left: auto;
+}
+
+.result-swaras {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 5px;
+    margin-top: 8px;
+}
+
+.result-note {
+    margin: 7px 0 0;
+    line-height: 1.5;
+}
+
+/* theory */
+.tool-table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 11.5px;
+}
+
+.tool-table th {
+    text-align: left;
+    font: inherit;
+    font-size: 9.5px;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    opacity: 0.45;
+    padding: 0 10px 6px 0;
+    border-bottom: 1px solid rgba(232, 169, 78, 0.15);
+}
+
+.tool-table td {
+    padding: 7px 10px 7px 0;
+    border-bottom: 1px dashed rgba(232, 169, 78, 0.15);
+}
+
+.tool-table tr.komal td {
+    color: #d7924a;
+}
+
+.cell-deva {
+    font-size: 20px;
+}
+
+.thaat-top {
+    justify-content: space-between;
+}
+
+.dots {
+    display: flex;
+    gap: 4px;
+    margin: 10px 0 4px;
+}
+
+.dots i {
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background: rgba(232, 169, 78, 0.15);
+}
+
+.dots i.on {
+    background: #e8a94e;
+}
+
+.chord-view {
+    margin-top: 16px;
+}
+
+.chord-name {
+    margin: 0 0 10px;
+    font-size: 15px
+}
+
+.chord-notes {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+}
+
+.chord-note {
+    min-width: 82px;
+    padding: 12px 10px;
+}
+
+.chord-west {
+    font-size: 14px;
+}
+
+/*taal*/
+.matra-strip {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 14px;
+    margin: 16px 0 6px;
+}
+
+.vibhag {
+    position: relative;
+    display: flex;
+    gap: 5px;
+    padding: 0 10px 20px 0;
+    border-right: 1px solid rgba (232, 169, 78, 0.18);
+}
+
+.vibhag:last-child {
+    border-right: none;
+}
+
+.vibhag-mark {
+    position: absolute;
+    left: 0;
+    bottom: 2px;
+    font-size: 10px;
+    opacity: 0.45;
+}
+
+.matra {
+    width: 56px;
+    cursor: default;
+}
+
+.matra-num {
+    font-size: 13px;
+}
+
+.matra.sam {
+    border-color: rgba(232, 169, 78, 0.55);
+}
+
+.matra.khali {
+    border-style: dashed;
+    opacity: 0.6;
+}
+
+.matra.khali.now {
+    background: rgba(87, 201, 173, 0.28);
+    border-color: rgba(87, 201, 173, 0.85);
+}
+
+/*drone*/
+.string-view {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin: 14px 0;
+}
+
+.string {
+    min-width: 96px;
+    padding: 14px 12px;
+    gap: 4px;
+}
+
+.string-deva {
+    font-size: 22px;
+}
+
+.string-name {
+    font-size: 11px;
+}
+
+/* the ear trainer*/
+
+.ear-feedback {
+    margin: 6px 0 12px;
+    font-size: 12px;
+    opacity: 0.45;
+}
+
+.ear-feedback.good,
+.answer.good {
+    color: #57c9ad;
+    opacity: 1;
+}
+
+.ear-feedback.bad {
+    color: #ff8c78;
+    opacity: 1;
+}
+
+.answer {
+    padding: 12px 8px;
+    font-size: 11px;
+}
+
+.answer.good {
+    background: rgba(87, 201, 173, 0.22);
+    border-color: rgba(87, 201, 173, 0.8);
+}
+
+.answer.bad {
+    background: rgba(120, 40, 30, 0.5);
+    border-color: rgba(87, 201, 173, 0.8);
+    color: #ffd6cc;
+}
+
+/*tuner*/
+.tuner-face {
+    margin: 16px 0 6px;
+    padding: 22p;
+    border-radius: 14px;
+}
+
+.tuner-face.locked {
+    border-color: rgba(87, 201, 173, 0.55);
+}
+
+.tuner-swara {
+    display: flex;
+    align-items: baseline;
+    gap: 14px;
+    font-size: 13px;
+}
+
+.tuner-deva {
+    font-size: 44px;
+}
+
+.cents-track {
+    position: relative;
+    height: 30px;
+    margin-top: 16px;
+    border-radius: 6px;
+    border: 1px solid rgba(232, 169, 78, 0.16);
+    background: linear-gradient(90deg, rgba(255, 140, 120, 0.12), rgba(87, 201, 173, 0.16) 50%, rgba(255, 140, 120, 0.12));
+}
+
+.cents-centre,
+.cents-needle {
+    position: absolute;
+    top: 3px;
+    bottom: 3px;
+    width: 1px;
+    background: rgba(87, 201, 173, 0.7);
+}
+
+.cents-centre {
+    left: 50%;
+}
+
+.cents-needle {
+    width: 3px;
+    margin-left: -1.5px;
+    border-radius: 2px;
+    background: #e8a94e;
+    box-shadow: 0 0 14px rgba(232, 169, 78, 0.7);
+    transition: left 0.08s linear;
+}
+
+/*THE NARROW SCREENS-viewable-*/
+
+@media(max-width: 760px) {
+    .overlay.tools-overlay {
+        zoom: 1;
+        padding: 18px 14px 50px;
+    }
+
+    .keyrow {
+        grid-template-columns: repeat(6, 1fr);
+    }
+
+    .tool-table {
+        display: block;
+        overflow-x: auto;
+    }
+}
