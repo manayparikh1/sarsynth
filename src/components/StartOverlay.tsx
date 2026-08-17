@@ -7,9 +7,18 @@ interface Props {
   onStart: () => void;
   onStartWithoutCamera: () => void;
   onSelectInstrument: (name: string) => void;
+  onOpenTools: () => void;
 }
 
-export function StartOverlay({ phase, message, error, onStart, onStartWithoutCamera, onSelectInstrument }: Props) {
+export function StartOverlay({
+  phase,
+  message,
+  error,
+  onStart,
+  onStartWithoutCamera,
+  onSelectInstrument,
+  onOpenTools,
+}: Props) {
   if (phase === 'running') return null;
 
   return (
@@ -39,6 +48,12 @@ export function StartOverlay({ phase, message, error, onStart, onStartWithoutCam
               Continue without camera
             </button>
           </div>
+        )}
+
+        {phase !== 'loading' && (
+          <button className="ghost" onClick={onOpenTools}>
+            Practice tools
+          </button>
         )}
 
         {error && <p className="error">{error}</p>}

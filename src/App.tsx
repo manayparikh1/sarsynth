@@ -6,6 +6,7 @@ import { Readout } from './components/Readout';
 import { SettingsPanel } from './components/SettingsPanel';
 import { StartOverlay } from './components/StartOverlay';
 import { TopBar } from './components/TopBar';
+import { ToolsPage } from './tools/ToolsPage';
 import { instrumentById } from './audio/instruments';
 import { ALL_INSTRUMENTS } from './instrumentInfo';
 import { scaleById } from './music/ragas';
@@ -34,6 +35,7 @@ export default function App() {
   const [showSettings, setShowSettings] = useState(false);
   const [showGames, setShowGames] = useState(false);
   const [instrumentPage, setInstrumentPage] = useState<string | null>(null);
+  const [showTools, setShowTools] = useState(false);
 
   if (!performerRef.current) {
     performerRef.current = new Performer();
@@ -308,7 +310,9 @@ export default function App() {
         </>
       )}
 
-      {instrumentPage ? (
+      {showTools ? (
+        <ToolsPage onBack={() => setShowTools(false)} />
+      ) : instrumentPage ? (
         <InstrumentPage
           instrument={ALL_INSTRUMENTS.find((i) => i.name === instrumentPage)!}
           onBack={() => setInstrumentPage(null)}
@@ -321,6 +325,7 @@ export default function App() {
           onStart={() => void start(true)}
           onStartWithoutCamera={() => void start(false)}
           onSelectInstrument={setInstrumentPage}
+          onOpenTools={() => setShowTools(true)}
         />
       )}
     </div>

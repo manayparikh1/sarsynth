@@ -286,6 +286,23 @@ Each instrument has:
 - Attack/decay profiles
 - Expression curves
 
+## Extra Tools Interally to help with music
+
+खोज Scale & raga finder: tap the notes and you will know its list and every thaat, raga, and western scale that actually contains them and its also playable, which is pretty cool.
+
+शास्त्र Music theory: the 12 swaras with only the ratios and the Hz, the 10 thaats, and all the 12 intervals plus a chord builder thats mapped to sargam.
+
+ताल Taal & metronome: this is straight forward, so its basically a cycle-based metronome (teental, jhaptaal, ektaal, rupak, keherwa, dadra + 4/4, 3/4, 5/4, 7/8) with sam/tali/khali accents, bols and tap tempo, and yes it works pretty well in a indian style but western could also be used with it.
+
+तानपूरा Drone & shruti box: a tanpura drone on your Sa with a choice of companion string(Pa, Ma, Ni, komal Ni or Sa only), level and pluck pace, so it basically has a connection to what you play.
+
+कान Ear trainer: play Sa then a swara from a scale you pick and you get to name it yourself and keep its score in unison.
+
+सुर Tuner: mic pitch detection that names what you are playing as a swara above your Sa and shows many cents off it is like normal western tuners.
+
+**Overall these 6 distinct tools have a indian connection but what I learned is that indian music has some sorta connection to every type of music like jazz or chinese music or anything. So I hope these 6 minor tools will help (around 1500 ish lines of code in total prolly.)**
+
+
 ## The Overview of the Architecture
 
 *SarSynth is structured around 3 systems which include the vision, music, and audio layer:*
